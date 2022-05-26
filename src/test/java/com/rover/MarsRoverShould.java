@@ -73,15 +73,15 @@ public class MarsRoverShould {
         Command turnRightCommand = new TurnRightCommand(rover);
         Command turnLeftCommand = new TurnLeftCommand(rover);
 
-        var remoteMove = new RemoteButton(moveCommand);
-        var remoteRight = new RemoteButton(turnRightCommand);
-        var remoteLeft = new RemoteButton(turnLeftCommand);
+        var moveButton = new RemoteButton(moveCommand);
+        var rightButton = new RemoteButton(turnRightCommand);
+        var leftButton = new RemoteButton(turnLeftCommand);
 
-        remoteMove.pressed();
-        remoteRight.pressed();
-        remoteMove.pressed();
-        remoteLeft.pressed();
-        remoteMove.pressed();
+        moveButton.pressed();
+        rightButton.pressed();
+        moveButton.pressed();
+        leftButton.pressed();
+        moveButton.pressed();
 
         assertEquals("1:2:N", rover.toString());
     }
