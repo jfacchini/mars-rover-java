@@ -9,7 +9,7 @@ public class MarsRover {
         this.cardinal = Cardinal.fromString(cardinal);
     }
 
-    public String execute(String input) {
+    public void execute(String input) {
         var commands = input.split("");
 
         for (var command : commands) {
@@ -19,20 +19,22 @@ public class MarsRover {
                 case "L" -> rotateLeft();
             }
         }
-
-        return String.format("%s:%s", position, cardinal);
     }
 
-    private void rotateLeft() {
+    public void rotateLeft() {
         cardinal = cardinal.left();
     }
 
-    private void rotateRight() {
+    public void rotateRight() {
         cardinal = cardinal.right();
     }
 
-    private void move() {
+    public void move() {
         position = cardinal.moveFrom(position);
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s:%s", position, cardinal);
+    }
 }
