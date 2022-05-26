@@ -1,6 +1,6 @@
-package com.rover;
+package com.rover.geolocation;
 
-interface Cardinal {
+public interface Cardinal {
     static Cardinal fromString(String cardinal) {
         return switch (cardinal) {
             case "N" -> new North();

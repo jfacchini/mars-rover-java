@@ -1,4 +1,6 @@
-package com.rover;
+package com.rover.remoteControl;
+
+import com.rover.MarsRover;
 
 public class MoveCommand implements Command {
     private final MarsRover rover;

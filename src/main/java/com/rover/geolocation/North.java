@@ -1,23 +1,23 @@
-package com.rover;
+package com.rover.geolocation;
 
-public class East implements Cardinal {
+public class North implements Cardinal {
     @Override
     public Cardinal right() {
-        return new South();
+        return new East();
     }
 
     @Override
     public Cardinal left() {
-        return new North();
+        return new West();
     }
 
     @Override
     public Position moveFrom(Position position) {
-        return position.right();
+        return position.up();
     }
 
     @Override
     public String toString() {
-        return "E";
+        return "N";
     }
 }

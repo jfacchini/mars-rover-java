@@ -1,10 +1,10 @@
-package com.rover;
+package com.rover.remoteControl;
 
 public class RemoteButton {
 
     private final Command command;
 
-    RemoteButton(Command command) {
+    public RemoteButton(Command command) {
         this.command = command;
     }
 

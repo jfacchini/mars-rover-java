@@ -1,5 +1,8 @@
 package com.rover;
 
+import com.rover.geolocation.Cardinal;
+import com.rover.geolocation.Position;
+
 public class MarsRover {
     private Cardinal cardinal;
     private Position position;

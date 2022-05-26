@@ -1,4 +1,4 @@
-package com.rover;
+package com.rover.geolocation;
 
 public class South implements Cardinal {
     @Override

@@ -1,4 +1,4 @@
-package com.rover;
+package com.rover.geolocation;
 
 public class Position {
     private final int x;

@@ -1,4 +1,6 @@
-package com.rover;
+package com.rover.remoteControl;
+
+import com.rover.MarsRover;
 
 public class TurnRightCommand implements Command {
     private final MarsRover rover;
