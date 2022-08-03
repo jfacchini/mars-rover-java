@@ -13,13 +13,13 @@ public class MarsRover {
     }
 
     public void execute(String input) {
-        var commands = input.split("");
+        var commands = input.toCharArray();
 
         for (var command : commands) {
             switch (command) {
-                case "M" -> move();
-                case "R" -> rotateRight();
-                case "L" -> rotateLeft();
+                case 'M' -> move();
+                case 'R' -> rotateRight();
+                case 'L' -> rotateLeft();
             }
         }
     }
@@ -33,7 +33,7 @@ public class MarsRover {
     }
 
     public void move() {
-        position = cardinal.moveFrom(position);
+        position = position.moveTowards(cardinal);
     }
 
     @Override

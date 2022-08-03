@@ -29,4 +29,13 @@ public class Position {
     public String toString() {
         return String.format("%d:%d", x, y);
     }
+
+    public Position moveTowards(Cardinal cardinal) {
+        return switch (cardinal) {
+            case NORTH -> up();
+            case EAST -> right();
+            case SOUTH -> down();
+            case WEST -> left();
+        };
+    }
 }

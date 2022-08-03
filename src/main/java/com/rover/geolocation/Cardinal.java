@@ -1,18 +1,47 @@
 package com.rover.geolocation;
 
-public interface Cardinal {
-    static Cardinal fromString(String cardinal) {
+public enum Cardinal {
+
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST;
+
+    public static Cardinal fromString(String cardinal) {
         return switch (cardinal) {
-            case "N" -> new North();
-            case "E" -> new East();
-            case "S" -> new South();
-            default -> new West();
+            case "N" -> Cardinal.NORTH;
+            case "E" -> Cardinal.EAST;
+            case "S" -> Cardinal.SOUTH;
+            case "W" -> Cardinal.WEST;
+            default -> throw new IllegalStateException("Unexpected value: " + cardinal);
         };
     }
 
-    Cardinal right();
+    public Cardinal right() {
+        return switch (this) {
+            case NORTH -> EAST;
+            case EAST -> SOUTH;
+            case SOUTH -> WEST;
+            case WEST -> NORTH;
+        };
+    }
 
-    Cardinal left();
+    public Cardinal left() {
+        return switch (this) {
+            case NORTH -> WEST;
+            case WEST -> SOUTH;
+            case SOUTH -> EAST;
+            case EAST -> NORTH;
+        };
+    }
 
-    Position moveFrom(Position position);
+    @Override
+    public String toString() {
+        return switch (this) {
+            case NORTH -> "N";
+            case EAST -> "E";
+            case SOUTH -> "S";
+            case WEST -> "W";
+        };
+    }
 }
